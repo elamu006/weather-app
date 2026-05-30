@@ -7,17 +7,18 @@
 
 body{
     width:100%;
-    height:100vh;
+    min-height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
     background:#555;
+    padding:20px;
 }
 
 .card{
-    width:90%;
+    width:100%;
     max-width:450px;
-    background:linear-gradient(135deg,#00feba,rgba(0, 153, 255, 0.61));
+    background:linear-gradient(135deg,#00feba,rgba(0,153,255,0.61));
     color:#fff;
     padding:40px 35px;
     border-radius:20px;
@@ -28,38 +29,43 @@ body{
     width:100%;
     display:flex;
     align-items:center;
-    justify-content:space-between;
+    gap:10px;
 }
 
 .search input{
+    flex:1;
+    min-width:0; /* Important for mobile */
     border:0;
     outline:0;
     background:#ebfffc;
     color:#555;
-    padding:15px 25px;
-    height:60px;
+    padding:12px 20px;
+    height:55px;
     border-radius:30px;
-    flex:1;
-    margin-right:16px;
-    font-size:18px;
+    font-size:16px;
 }
 
 .search button{
+    width:55px;
+    height:55px;
+    min-width:55px;
     border:0;
     outline:0;
     background:#ebfffc;
     border-radius:50%;
-    width:60px;
-    height:60px;
     cursor:pointer;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
 
 .search button i{
-    font-size:22px;
+    font-size:18px;
 }
 
 .weather-icon{
     width:170px;
+    max-width:100%;
     margin-top:30px;
 }
 
@@ -78,6 +84,7 @@ body{
     display:flex;
     justify-content:space-between;
     margin-top:50px;
+    gap:20px;
 }
 
 .col{
@@ -86,11 +93,98 @@ body{
     text-align:left;
 }
 
-.col img{
-    width:40px;
-    margin-right:10px;
+.humidity,
+.wind{
+    font-size:28px;
 }
 
-.humidity,.wind{
-    font-size:28px;
+/* ========================= */
+/* Mobile Devices */
+/* ========================= */
+@media (max-width: 576px){
+
+    .card{
+        padding:25px 20px;
+    }
+
+    .search input{
+        height:50px;
+        font-size:16px;
+        padding:12px 18px;
+    }
+
+    .search button{
+        width:50px;
+        height:50px;
+    }
+
+    .weather-icon{
+        width:120px;
+    }
+
+    .weather h1{
+        font-size:48px;
+    }
+
+    .weather h2{
+        font-size:28px;
+    }
+
+    .details{
+        flex-direction:column;
+        align-items:center;
+        gap:25px;
+        margin-top:35px;
+    }
+
+    .humidity,
+    .wind{
+        font-size:22px;
+    }
+}
+
+/* ========================= */
+/* Tablets */
+/* ========================= */
+@media (min-width: 577px) and (max-width: 992px){
+
+    .card{
+        max-width:550px;
+        padding:35px 30px;
+    }
+
+    .weather-icon{
+        width:150px;
+    }
+
+    .weather h1{
+        font-size:60px;
+    }
+
+    .weather h2{
+        font-size:35px;
+    }
+
+    .humidity,
+    .wind{
+        font-size:24px;
+    }
+}
+
+/* ========================= */
+/* Laptops & Desktops */
+/* ========================= */
+@media (min-width: 993px){
+
+    .card{
+        max-width:500px;
+    }
+
+    .weather h1{
+        font-size:75px;
+    }
+
+    .weather h2{
+        font-size:42px;
+    }
 }
