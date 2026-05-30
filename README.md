@@ -71,7 +71,7 @@ This project is licensed under the MIT License.
 
 👨‍💻 Author
 
-Developed by Elamurugan
+Developed by Elampirai
 
 GitHub:
 elamu006 GitHub Profile
